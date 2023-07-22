@@ -32,6 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Indexviews.as_view(), name='index'),
     path('', include('apps.posts.urls')),
+    # path('apps/', include('apps.urls', namespace='apps')),
+    
+    
     # path('', include('apps.posts.urls')),
 ]
 

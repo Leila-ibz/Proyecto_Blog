@@ -1,18 +1,32 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'css/mediumish.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/mediumish.css' %}">
 
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-<script src="{% static 'js/mediumish.js' %}"></script>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+<script src="{% static 'assets/js/mediumish.js' %}"></script>
+<!-- Bootstrap core CSS -->
+<link href="static/assets/css/bootstrap.min.css" rel="stylesheet">
+<!-- Fonts -->
+<link href="{% static 'assets/css/awesome.min.css' %}" rel="stylesheet">
+<link href="{%static 'assets/css/Merriweather.css' %}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{%static 'assets/css/mediumish.css' %} rel="stylesheet">
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/tether.min.js' %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+<script src="{% static 'assets/js/mediumish.js' %}"></script>
+   
 
 
-
-<!-- --------------------------------------------------- -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ar">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,13 +35,8 @@
 <link rel="icon" href="static/img/favicon.png">
 
 <title>Blog&middot;Tivo</title>
-<!-- Bootstrap core CSS -->
-<link href="static/css/bootstrap.min.css" rel="stylesheet">
-<!-- Fonts -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="static/css/mediumish.css" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -42,7 +51,7 @@
 <div class="container">
 	<!-- Begin Logo -->
 	<a class="navbar-brand" href="#">
-	<img src="static/img/logo.jpg" alt="logo">
+		<img src="{% static 'img/logo.jpg' %}" alt="logo">
 	</a>
 	<!-- End Logo -->
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -118,7 +127,7 @@
 			<!-- begin post -->
 			<div class="col-md-4">
 				<div class="card">
-					<a href="#"> 
+					<a href="{% url 'posts:leer_articulo' articulo.id %}"> 
 					 <img src="{{ articulo.imagen.url }}" class="img-fluid img-thumb"> 
 					</a>
 
@@ -136,7 +145,7 @@
 									</style>
 						
 					
-								<a href="#">
+								    <a href="{% url 'posts:leer_articulo' articulo.id %}">
 									{% if articulo.avatar %}
 											<!-- Mostrar el avatar del artículo si existe -->
 										<img class="author-thumb" src="{{ articulo.avatar.url }}">
@@ -150,7 +159,7 @@
 								</span>
 								<span class="author-meta">
 								<span class="post-name"><a href="#">{{ articulo.nickname }}</a></span><br/>
-								<span class="post-date">{{ articulo.publicado }}</span><span class="dot"></span><span class="post-read"></span>
+								<span class="post-date">{{ articulo.fecha_publicacion }}</span><span class="dot"></span><span class="post-read"></span>
 								</span>
 								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
 							</div>
@@ -171,7 +180,7 @@
 ================================================== -->
 <div class="alertbar">
 	<div class="container text-center">
-		<img src="static/img/logo.jpg" alt=""> &nbsp; Mantén tu compromiso verde en crecimiento: Suscríbete y florece con nuestras noticias cada semana.<a href="#" class="btn subscribe">Suscribirse</a>
+		<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; Mantén tu compromiso verde en crecimiento: Suscríbete y florece con nuestras noticias cada semana.<a href="#" class="btn subscribe">Suscribirse</a>
 	</div>
 </div>
 <!-- End AlertBar
@@ -194,13 +203,7 @@
 <!-- End Footer
 ================================================== -->
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/tether.min.js' %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-<script src="{% static 'js/mediumish.js' %}"></script>
+
 
 </body>
 </html>

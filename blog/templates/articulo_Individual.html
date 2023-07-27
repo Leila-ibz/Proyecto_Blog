@@ -109,7 +109,23 @@
 									</span>
 									<span class="author-meta">
 									<span class="post-name"><a href="author.html">{{ articulos.nickname | capfirst }}</a></span><br/>
-									<span class="post-date">{{ articulos.publicado | capfirst }} </span><span class="dot"></span><span class="post-read"></span>
+									<span class="post-date">{{ articulos.publicado | capfirst }} </span><span class="dot"></span><span class="post-read"></span> 
+
+
+
+									<br>
+									<br>
+
+									<!-- Begin Tags -->
+			                            <div class="after-post-tags">
+				                              <ul class="tags">
+					                          <li><a href="#">Reciclaje</a></li>
+					                          <li><a href="#">Flora y fauna</a></li>
+					                          <li><a href="#">Conservación</a></li>
+					                          <li><a href="#">Tecnología verde</a></li>
+				                              </ul>
+			                                  </div>
+			                        <!-- End Tags -->
 									</span>
 									
 									
@@ -123,14 +139,60 @@
 					</div>
 				</div>
 <!-- end post -->
-				
+
+<!-- para centrar el texto  -->
+	<style>
+		.section-title {
+			text-align: center;
+		}
+	</style>
+	
+	<section class="featured-posts">
+		<div class="section-title">
+			<h2><span>Comentarios del Articulo:</span></h2>
+		</div>
+	</section>
 <!-- End Author Posts
 ================================================== -->
+<!-- Estilos CSS para el recuadro -->
+<style>
+    .post-recuadro {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .post-recuadro .author-thumb {
+		max-width: 100%;
+        border-radius: 50%;
+        margin-left: 50px; /* Agrega un margen izquierdo para mover la imagen hacia la derecha */
+		margin-top: 30px;
+	}
+
+    /* Resto de los estilos... */
+</style>
+
+<!-- Contenido del recuadro -->
+<div class="post-recuadro">
+    <!-- Begin Top Meta -->
+    <div class="row post-top-meta">
+        <div class="col-md-2">
+            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+        </div>
+        <div class="col-md-10">
+            <a class="link-dark" href="author.html">USUARIO :</a>
+            <span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
+            <span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+        </div>
+    </div>
+    <!-- End Top Meta -->
+</div>
+
 <!-- Begin AlertBar
 ================================================== -->
 <div class="alertbar">
 	<div class="container text-center">
-		<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; Mantén tu compromiso verde en crecimiento: Suscríbete y florece con nuestras noticias cada semana.<a href="#" class="btn subscribe">Suscribirse</a>
+		<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; ¡Un compromiso verde en crecimiento te espera! Mantente conectado con la naturaleza:<a href="#" class="btn subscribe">Contactanos</a>
 	</div>
 </div>
 <!-- End AlertBar

@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 # from .views import index
 from .views import Indexviews
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Esto hice para que muestre las imagenes
 from django.conf import settings
@@ -32,11 +33,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Indexviews.as_view(), name='index'),
     path('', include('apps.posts.urls')),
+    path('', include('apps.contacto.urls')),
     # path('apps/', include('apps.urls', namespace='apps')),
     
-    
     # path('', include('apps.posts.urls')),
-]
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 # Esto hice para que muestre las imagenes

@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es-ar">
+
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="Iniciar sesión" content="">
+<link rel="icon" href="static/img/favicon.png">
+
+<title>Blog&middot;Tivo</title>
+
+<!-- Bootstrap core CSS -->
+<link href="{% static 'assets/css/bootstrap2.min.css' %}" rel="stylesheet">
+<!-- Fonts -->
+<link href="{% static 'assets/css/awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/righteous.css' %}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
+
+
+<!-- Google Web Fonts -->
+<link href="{% static 'assets/css/swap.css' %}" rel="stylesheet">
+
+<!-- Icon Font Stylesheet -->
+<link href="{% static 'assets/css/css_all.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/bootstrap-icons.css' %}" rel="stylesheet">
+<!-- Libraries Stylesheet -->
+<link href="{% static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+ <!-- Customized Bootstrap Stylesheet -->
+ <link href="{% static 'assets/css/bootstrap2.min.css' %}" rel="stylesheet">
+
+ <!-- Template Stylesheet -->
+ <link href="{% static 'assets/css/style2.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="http://127.0.0.1:8000/">
+
+	<img src="static/img/logo.jpg" alt="logo">
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="    ">Descubre nuestra esencia eco-consciente <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="{% url 'posts:articulos' %}">Articulos</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="#">Iniciar Sesión</a>
+			</li>
+		</ul>
+		<!-- End Menu -->
+
+
+		<!-- Begin Search -->
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="Explora el eco-universo">
+			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+		</form>
+		<!-- End Search -->
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
+
+
+ <!-- Contact Start -->
+<div class="container-xxl contact py-5">
+    <div class="container">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Contact Us</p>
+            <h1 class="display-6">If You Have Any Query, Please Contact Us</h1>
+        </div>
+        <div class="row g-5 mb-5">
+            <!-- Resto del código -->
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <!-- Resto del código -->
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="h-100">
+                    <!-- Actualizar la URL del mapa con "Resistencia, Chaco, Argentina" -->
+                    <iframe class="w-100 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44979.24241583961!2d-58.98629308405237!3d-27.459619755938343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c6c7c2c2151%3A0xb49ad215dbd6e3d2!2sResistencia%2C%20Chaco%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627292071616!5m2!1sen!2sus" frameborder="0" style="height: 100%; min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/tether.min.js' %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/bootstrap2.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+<script src="{% static 'assets/js/mediumish.js' %}"></script>
+
+<!-- Placed at the end of the document so the pages load faster -->
+
+ <!-- JavaScript Libraries -->
+ <script src="{% static 'assets/js/jquery2.min.js' %}"></script>
+ <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'assets/lib/wow/wow.min.js' %}"></script>
+ <script src="{% static 'assets/lib/easing/easing.min.js' %}"></script>
+ <script src="{% static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
+ <script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+ <!-- Template Javascript -->
+ <script src="{% static 'assets/js/main.js' %}"></script>

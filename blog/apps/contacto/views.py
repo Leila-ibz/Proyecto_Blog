@@ -16,3 +16,4 @@ class ContactoUsuario(CreateView):
     def form_valid(self, form):
         messages.success(self.request, 'consulta enviada.')
         return super().form_valid(form)
+

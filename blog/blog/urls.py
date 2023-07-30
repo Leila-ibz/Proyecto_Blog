@@ -25,6 +25,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # Esto hice para que muestre las imagenes
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 
 # ACA LE AVISA QUE TIENE QUE IR A BUSCAR LA URL DE LA APLICACION
@@ -35,7 +36,7 @@ urlpatterns = [
     path('', include('apps.posts.urls')),
     path('', include('apps.contacto.urls')),
     # path('apps/', include('apps.urls', namespace='apps')),
-    
+    path('quienessomos/', views.quienes_somos_view, name='quienes_somos')
     # path('', include('apps.posts.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

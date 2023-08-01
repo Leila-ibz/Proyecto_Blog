@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Artículos</title>
+</head>
+<body>
+    <h1>Lista de Artículos</h1>
+    <ul>
+        <li>
+            <a href="{% url 'art_detalle' article.id %}">{{ art.title }}</a> <!-- estamos generando una URL para el detalle de un artículo específico-->
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_art' %}">Crear Nuevo Artículo</a>
+</body>
+</html>

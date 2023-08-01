@@ -1,0 +1,22 @@
+<!--  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articulo</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>  <!-- los signos asi {} son d prueba para ver en la web-->
+    <p>{{ article.content }}</p>
+    <h2>Comentarios</h2>
+    <ul>
+        <li>
+            <strong>{{ comentarios.author }}</strong> - {{ comentario.pub_date }}
+            <p>{{ comentario.text }}</p>
+        </li>
+        {% empty %}
+        <li>No hay comentarios aún.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_comentario' article.id %}">Agregar Comentario!</a>
+</body>
+</html>

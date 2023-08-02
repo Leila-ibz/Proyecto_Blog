@@ -21,10 +21,11 @@
 	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'assets/css/mediumish.css' %}">
 	<!--auxiliar2-->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<!-- Google Web Fonts -->
-	
+
 	<link href="{% static 'assets/css/swap.css' %}" rel="stylesheet">
-	
+
 	<!-- Icon Font Stylesheet -->
 	<link href="{% static 'assets/css/css_all.min.css' %}" rel="stylesheet">
 	<link href="{% static 'assets/css/bootstrap-icons.css' %}" rel="stylesheet">
@@ -32,10 +33,16 @@
 
 	<link href="{% static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
 	<link href="{% static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+	<!--Auxiliar -->
 	
 
 
-
+	
+	<!-- Auxiliar  -->
+	<!-- <link rel="stylesheet" href="{% static 'assets/css2/bootstrap.min.css' %}"> -->
+	<!-- <link rel="stylesheet" href="{% static 'assets/css2/animated-headline.css' %}"> -->
+	<link rel="stylesheet" href="{% static 'assets/css2/style.css' %}">
 
 
 
@@ -72,20 +79,33 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{% url 'usuario:login' %}">Iniciar Sesión</a>
 						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown">Hola! Leila</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item"></a>
+									<p>
+										{% if user.is_authenticated %}
+									<form method="post" action="{% url 'usuario:logout' %}">
+										{% csrf_token %}
+										<button type="submit"
+											style="font-size: 19px; color: rgb(0, 0, 0); margin-right: 20px; background: none; border: none; cursor: pointer;">Cerrar
+											Sesión</button>
+									</form>
+									{% else %}
+									<a href="#" style="font-size: 10px; color: rgb(0, 0, 0); margin-right: 20px;">.</a>
+									{% endif %}
+									<p>
+								</li>
+
+								{% comment %} <li><a class="dropdown-item" href="#">Servicio 2</a></li>
+								<li><a class="dropdown-item" href="#">Servicio 3</a></li> {% endcomment %}
+							</ul>
+						</li>
+
 					</ul>
 					<!-- End Menu -->
 
-
-					<!-- Begin Search -->
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="text" placeholder="Explora el eco-universo">
-						<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
-								<path
-									d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
-								</path>
-							</svg></span>
-					</form>
-					<!-- End Search -->
 				</div>
 			</div>
 		</nav>
@@ -125,8 +145,53 @@
 	<script src="{% static 'assets/lib/easing/easing.min.js' %}"></script>
 	<script src="{% static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
 	<script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
 	<!-- Template Javascript -->
 	<script src="{% static 'assets/js/main.js' %}"></script>
+
+	<script src="{% static 'assets/js/menu.js' %}"></script>
+
+	<!-- Auxiliar -->
+	<script src="{% static 'assets/js2/popper.min.js' %}"></script>
+	<script src="{% static 'assets/js2/bootstrap.min.js' %}"></script>
+	<!-- Jquery Mobile Menu -->
+	<script src="{% static 'assets/js2/jquery.slicknav.min.js' %}"></script>
+
+	<!-- Video bg -->
+	<script src="{% static 'assets/js2/jquery.vide.js' %}"></script>
+
+	<!-- Jquery Slick , Owl-Carousel Plugins -->
+	<script src="{% static 'assets/js2/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'assets/js2/slick.min.js' %}"></script>
+	<!-- One Page, Animated-HeadLin -->
+	<script src="{% static 'assets/js2/wow.min.js' %}"></script>
+	<script src="{% static 'assets/js2/animated.headline.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.magnific-popup.js' %}"></script>
+
+	<!-- Date Picker -->
+	<script src="{% static 'assets/js2/gijgo.min.js' %}"></script>
+	<!-- Nice-select, sticky -->
+	<script src="{% static 'assets/js2/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.sticky.js' %}"></script>
+	<!-- Progress -->
+	<script src="{% static 'assets/js2/jquery.barfiller.js' %}"></script>
+
+	<!-- counter , waypoint,Hover Direction -->
+	<script src="{% static 'assets/js2/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'assets/js2/waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.countdown.min.js' %}"></script>
+	<script src="{% static 'assets/js2/hover-direction-snake.min.js' %}"></script>
+
+	<!-- contact js -->
+	<script src="{% static 'assets/js2/contact.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.form.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.validate.min.js' %}"></script>
+	<script src="{% static 'assets/js2/mail-script.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.ajaxchimp.min.js' %}"></script>
+
+	<!-- Jquery Plugins, main Jquery -->
+	<script src="{% static 'assets/js2/plugins.js' %}"></script>
+	<script src="{% static 'assets/js2/main.js' %}"></script>
 </body>
 
 </html>

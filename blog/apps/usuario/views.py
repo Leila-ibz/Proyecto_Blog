@@ -35,3 +35,5 @@ class LogoutUsuario(LogoutView):
         messages.success(self.request, '¡SU CUENTA HA SIDO CERRADA CORRECTAMENTE! ¡HASTA LUEGO!')
 
         return reverse('usuario:login')
+    
+

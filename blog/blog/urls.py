@@ -34,12 +34,14 @@ urlpatterns = [
     path('', Indexviews.as_view(), name='index'),
     path('', include('apps.posts.urls')),
     path('', include('apps.contacto.urls')),
+    path('', include('apps.usuario.urls')),
+    path('', include('django.contrib.auth.urls')),
     # path('apps/', include('apps.urls', namespace='apps')),
     
     # path('', include('apps.posts.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-
+urlpatterns += staticfiles_urlpatterns()
 # Esto hice para que muestre las imagenes
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

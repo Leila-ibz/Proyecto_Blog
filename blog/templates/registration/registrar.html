@@ -1,0 +1,194 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="es-ar">
+
+
+<head>
+
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/mediumish.css' %}">
+
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+<script src="{% static 'assets/js/mediumish.js' %}"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="Iniciar sesión" content="">
+<link rel="icon" href="{% static 'img/favicon.png' %}">
+
+<title>Blog&middot;Tivo</title>
+
+<!-- Bootstrap core CSS -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Fonts -->
+<link href="{% static 'assets/css/awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/righteous.css' %}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- Begin Nav -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-black fixed-top mediumnavigation" style="background-color: black;">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+            <!-- Begin Menu -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="font-size: 20px; color: white; margin-right: 20px;">Descubre nuestra esencia eco-consciente <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'posts:articulos' %}" style="font-size: 20px; color: white; margin-right: 20px;">Articulos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'usuario:login' %}" style="font-size: 20px; color: white; margin-right: 20px;">Iniciar Sesión</a>
+                </li>
+            </ul>
+            <!-- End Menu -->
+        </div>
+    </div>
+</nav>
+<!-- End Nav -->
+
+	</div>
+</div>
+</nav>
+<!-- End Nav ================================================== -->
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="{% static 'assets/css2/bootstrap.min.css' %}">
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/owl.carousel.min.css' %}"> {% endcomment %}
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/slicknav.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css2/flaticon.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css2/progressbar_barfiller.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css2/gijgo.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css2/animate.min.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'assets/css2/animated-headline.css' %}">
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/magnific-popup.css' %}"> {% endcomment %}
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/fontawesome-all.min.css' %}"> {% endcomment %}
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/themify-icons.css' %}"> {% endcomment %}
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/slick.css' %}"> {% endcomment %}
+	{% comment %} <link rel="stylesheet" href="{% static 'assets/css2/nice-select.css' %}"> {% endcomment %}
+	<link rel="stylesheet" href="{% static 'assets/css2/style.css' %}">
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+   
+
+    
+{% comment %} ----------------------------------- {% endcomment %}
+
+
+<main class="login-body" data-vide-bg="{% static 'img/login-bg1.mp4' %}">
+    <!-- Login Admin -->
+    <form class="form-default" method="POST">
+        <div class="container login-form" style="background-color: rgba(255, 255, 255, 0.5); padding: 15px; margin-top: 0px;">
+            <h2 style="color: black;">Registro de usuarios:</h2>
+                    <div class="messages">
+                  {% for message in messages %}
+                    <table{% if message.tags %} class= "{{ message.tags }}" {% endif %}>{{ message}}</table>
+                    {% if message.tags == 'success' %}
+                    <script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Felicidades!',
+                            text: '{{ message|safe }}',
+                            confirmButtonText: 'OK'
+                        });
+                    </script>
+                    
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% csrf_token %}
+                <div class="container fluid">
+                  <table>{{ form }}</table>
+                  
+                <div class="form-input pt-30">
+                    <input type="submit" name="submit" value="Registrar">
+                </div>
+        </form>
+        <!-- /end login form -->
+
+    </main> 
+ 
+
+
+
+
+
+    {% comment %} <script src="{% static 'assets/js2/vendor/modernizr-3.5.0.min.js' %}"></script> {% endcomment %}
+    <!-- Jquery, Popper, Bootstrap -->
+    {% comment %} <script src="{% static 'assets/js2/vendor/jquery-1.12.4.min.js' %}"></script> {% endcomment %}
+    <script src="{% static 'assets/js2/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js2/bootstrap.min.js' %}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static 'assets/js2/jquery.slicknav.min.js' %}"></script>
+
+    <!-- Video bg -->
+    <script src="{% static 'assets/js2/jquery.vide.js' %}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static 'assets/js2/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js2/slick.min.js' %}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static 'assets/js2/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js2/animated.headline.js' %}"></script>
+    <script src="{% static 'assets/js2/jquery.magnific-popup.js' %}"></script>
+
+    <!-- Date Picker -->
+    <script src="{% static 'assets/js2/gijgo.min.js' %}"></script>
+    <!-- Nice-select, sticky -->
+    <script src="{% static 'assets/js2/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js2/jquery.sticky.js' %}"></script>
+    <!-- Progress -->
+    <script src="{% static 'assets/js2/jquery.barfiller.js' %}"></script>
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="{% static 'assets/js2/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js2/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js2/jquery.countdown.min.js' %]"></script>
+    <script src="{% static 'assets/js2/hover-direction-snake.min.js' %}"></script>
+
+    <!-- contact js -->
+    <script src="{% static 'assets/js2/contact.js' %}"></script>
+    <script src="{% static 'assets/js2/jquery.form.js' %}"></script>
+    <script src="{% static 'assets/js2/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js2/mail-script.js' %}"></script>
+    <script src="{% static 'assets/js2/jquery.ajaxchimp.min.js' %}"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="{% static 'assets/js2/plugins.js' %}"></script>
+    <script src="{% static 'assets/js2/main.js' %}"></script>
+    
+    </body>
+</html>
+
+
+
+
+
+    
+

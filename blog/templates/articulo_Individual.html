@@ -1,69 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-
-<html lang="es-ar">
-
-<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="Iniciar sesión" content="">
-		<link rel="icon" href="static/img/favicon.png">
-		
-		<title>Blog&middot;Tivo</title>
-
- 		<!-- Bootstrap core CSS -->
-		 <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
-		<!-- Fonts -->
-		<link href="{% static 'assets/css/awesome.min.css' %}" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
-</head>
-<body>
-
-<!-- Begin Nav
-================================================== -->
-<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
-	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="container">
-		<!-- Begin Logo -->
-		<a class="navbar-brand" href="http://127.0.0.1:8000/">
-	
-			<img src="{% static 'img/logo.jpg' %}" alt="logo">
-
-		</a>
-		<!-- End Logo -->
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-	
-			<!-- Begin Menu -->
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-				<a class="nav-link" href="    ">Descubre nuestra esencia eco-consciente <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-				<a class="nav-link" href="{% url 'posts:articulos' %}">Articulos</a>
-				</li>
-				<li class="nav-item">
-				<a class="nav-link" href="#">Iniciar Sesión</a>
-				</li>
-			</ul>
-			<!-- End Menu -->
-	
-	
-			<!-- Begin Search -->
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="text" placeholder="Explora el eco-universo">
-				<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
-			</form>
-			<!-- End Search -->
-		</div>
-	</div>
-	</nav>
-	<!-- End Nav
-	================================================== -->
+{% block content %}
 
 
 <!-- Begin Author Posts
@@ -71,152 +8,125 @@
 <div class="graybg authorpage">
 	<div class="container">
 		<div class="listrecent listrelated">
-			
-				<!-- begin post -->
-				<div class="authorpostbox">
-					<div class="card">
-						<a href="author.html">
-							
-					{% comment %} ACA VA LA IMAGEN DEL POST {% endcomment %}
+
+			<!-- begin post -->
+			<div class="authorpostbox">
+				<div class="card">
+					<a href="author.html">
+
+						<!--ACA VA LA IMAGEN DEL POST -->
 						<img class="img-fluid img-thumb" src="{{ articulos.imagen.url }}" alt="">
-						</a>
-						<div class="card-block">
-							<h2 class="card-title"> {{ articulos.titulo | capfirst }}</h2>
-							<h2 class="card-title"></a>Resumen:</h2> 
-							<h4 class="card-text" style="font-size: 18px;">"{{ articulos.resumen | capfirst }}"</h4>
-							<h2 class="card-title"><a href="#"></a>Contenido:</h2>  
-							<h4 class="card-text" style="font-size: 22px;">"{{ articulos.contenido | capfirst }}"</h4>
-            	<div class="metafooter">
-								<div class="wrapfooter">
-									<span class="meta-footer-thumb">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"> {{ articulos.titulo | capfirst }}</h2>
+						<h2 class="card-title"></a>Resumen:</h2>
+						<h4 class="card-text" style="font-size: 18px;">"{{ articulos.resumen | capfirst }}"</h4>
+						<h2 class="card-title"></a>Contenido:</h2>
+						<h4 class="card-text" style="font-size: 22px;">"{{ articulos.contenido | capfirst }}"</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
 
-										<style>
-											.author-thumb {
-												width: 80px; /* Ajusta el valor según el tamaño deseado */
-												height: 80px; /* Ajusta el valor según el tamaño deseado */
-											}
-										</style>
+									<style>
+										.author-thumb {
+											width: 80px;
+											/* Ajusta el valor según el tamaño deseado */
+											height: 80px;
+											/* Ajusta el valor según el tamaño deseado */
+										}
+									</style>
 
+									{% if articulo.avatar %}
+									<!-- Mostrar el avatar del artículo si existe -->
+									<img class="author-thumb" src="{{ articulo.avatar.url }}">
+									{% else %}
+									<!-- Mostrar una imagen predeterminada si no hay avatar -->
+									<img class="author-thumb" src="{% static 'avatar.jpg' %}">
+									{% endif %}
 
-										{% if articulo.avatar %}
-										    <!-- Mostrar el avatar del artículo si existe -->
-									        <img class="author-thumb" src="{{ articulo.avatar.url }}">
-								       {% else %}
-										    <!-- Mostrar una imagen predeterminada si no hay avatar -->
-									        <img class="author-thumb" src="{% static 'avatar.jpg' %}">
-								       {% endif %}
-
-									</span>
-									<span class="author-meta">
-									<span class="post-name"><a href="author.html">{{ articulos.nickname | capfirst }}</a></span><br/>
-									<span class="post-date">{{ articulos.publicado | capfirst }} </span><span class="dot"></span><span class="post-read"></span> 
-
-
-
+								</span>
+								<span class="author-meta">
+									<span class="post-name"><a href="author.html">{{ articulos.nickname | capfirst}}</a></span><br />
+									<span class="post-date">{{ articulos.publicado | capfirst }} </span><span
+										class="dot"></span><span class="post-read"></span>
 									<br>
 									<br>
+								</span>
+								<br><br>
+								<span class="post-read-more">
+									<a href="#" title="Editar Articulo">
+										<img class="svgIcon-use" src="{% static 'img/editar.jpg' %}" width="50" height="50">
+									</a>
+								</span>
+								<a target="_blank" href="#" class="btn subscribe" style="font-size: 1rem; padding: 8px 10px;">Comentar</a>
+							</div>
 
-									<!-- Begin Tags -->
-			                            <div class="after-post-tags">
-				                              <ul class="tags">
-					                          <li><a href="#">Reciclaje</a></li>
-					                          <li><a href="#">Flora y fauna</a></li>
-					                          <li><a href="#">Conservación</a></li>
-					                          <li><a href="#">Tecnología verde</a></li>
-				                              </ul>
-			                                  </div>
-			                        <!-- End Tags -->
-									</span>
-									
-									
-									<a target="_blank" href="#" class="btn follow float-right" style="font-size: 1.2rem; padding: 10px 20px;">Comentar</a> </div>
-							
-									
-							
-							
-								</div>
 						</div>
 					</div>
 				</div>
-<!-- end post -->
+			</div>
+			<!-- end post -->
 
-<!-- para centrar el texto  -->
-	<style>
-		.section-title {
-			text-align: center;
-		}
-	</style>
-	
-	<section class="featured-posts">
-		<div class="section-title">
-			<h2><span>Comentarios del Articulo:</span></h2>
-		</div>
-	</section>
-<!-- End Author Posts
-================================================== -->
-<!-- Estilos CSS para el recuadro -->
-<style>
-    .post-recuadro {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 20px;
-    }
+			<!-- para centrar el texto  -->
+			<style>
+				.section-title {
+					text-align: center;
+				}
+			</style>
 
-    .post-recuadro .author-thumb {
-		max-width: 100%;
-        border-radius: 50%;
-        margin-left: 50px; /* Agrega un margen izquierdo para mover la imagen hacia la derecha */
-		margin-top: 30px;
-	}
+			<section class="featured-posts">
+				<div class="section-title">
+					<h2><span>Comentarios del Articulo:</span></h2>
+				</div>
+			</section>
+			<!-- End Author Posts ================================================== -->
+			<!-- Estilos CSS para el recuadro -->
+			<style>
+				.post-recuadro {
+					border: 1px solid #ccc;
+					padding: 10px;
+					margin-bottom: 20px;
+				}
 
-    /* Resto de los estilos... */
-</style>
+				.post-recuadro .author-thumb {
+					max-width: 100%;
+					border-radius: 50%;
+					margin-left: 50px;
+					/* Agrega un margen izquierdo para mover la imagen hacia la derecha */
+					margin-top: 30px;
+				}
 
-<!-- Contenido del recuadro -->
-<div class="post-recuadro">
-    <!-- Begin Top Meta -->
-    <div class="row post-top-meta">
-        <div class="col-md-2">
-            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
-        </div>
-        <div class="col-md-10">
-            <a class="link-dark" href="author.html">USUARIO :</a>
-            <span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
-            <span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
-        </div>
-    </div>
-    <!-- End Top Meta -->
-</div>
+			</style>
 
-<!-- Begin AlertBar
-================================================== -->
-<div class="alertbar">
-	<div class="container text-center">
-		<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; ¡Un compromiso verde en crecimiento te espera! Mantente conectado con la naturaleza:<a href="#" class="btn subscribe">Contactanos</a>
-	</div>
-</div>
-<!-- End AlertBar
-================================================== -->
+			<!-- Contenido del recuadro -->
+			<div class="post-recuadro">
+				<!-- Begin Top Meta -->
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<a href="author.html"><img class="author-thumb"
+								src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
+								alt="Sal"></a>
+					</div>
+					<div class="col-md-10">
+						<a class="link-dark" href="author.html">USUARIO :</a>
+						<span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b>
+							theme that you're currently previewing. Developing professional premium themes, templates,
+							plugins, scripts since 2012.</span>
+						<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6
+							min read</span>
+					</div>
+				</div>
+				<!-- End Top Meta -->
+			</div>
 
-<!-- Begin Footer
-================================================== -->
-<div class="container">
-	<div class="footer">
-	  <p class="pull-left">
-	    Copyright &copy; 2017 Your Website Name
-	  </p>
-	  
-	</div>
-</div>
-<!-- End Footer
-================================================== -->
+			<!-- Begin AlertBar ================================================== -->
+			<div class="alertbar">
+				<div class="container text-center">
+					<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; ¡Un compromiso verde en crecimiento te
+					espera! Mantente conectado con la naturaleza:<a href="{% url 'contacto:contacto' %}"
+						class="btn subscribe">Contactanos</a>
+				</div>
+			</div>
+			<!-- End AlertBar ================================================== -->
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-<script src="{% static 'assets/js/tether.min.js' %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
-</body>
-</html>
+			{% endblock %}

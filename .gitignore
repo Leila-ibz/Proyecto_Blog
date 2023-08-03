@@ -2,6 +2,7 @@ blog/blog/configuraciones/local.py
 blog/apps/usuario/__pycache__/views.cpython-311.pyc
 blog/apps/usuario/__pycache__/views.cpython-311.pyc
 blog/apps/usuario/__pycache__/views.cpython-311.pyc
+blog/blog/configuraciones/__pycache__/local.cpython-311.pyc.orig
 
 *.pyc
 *.env

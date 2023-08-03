@@ -33,16 +33,14 @@
 	<link href="{% static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
 	<link href="{% static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 	
+	<!--Menú CSS-->
+	<link rel="stylesheet" type="text/css" href="{% static 'style_dropmenu.css' %}">
 
-
-
-
-
-
+	
 
 </head>
 
-<body>
+
 	<header>
 		<!-- Begin Nav ========== -->
 		<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
@@ -72,19 +70,24 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{% url 'usuario:login' %}">Iniciar Sesión</a>
 						</li>
+						
 					</ul>
 					<!-- End Menu -->
 
 
 					<!-- Begin Search -->
-					<form class="form-inline my-2 my-lg-0">
+					
+					
+
+										
+					<!-- <form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Explora el eco-universo">
 						<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
 								<path
 									d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
 								</path>
 							</svg></span>
-					</form>
+					</form> -->
 					<!-- End Search -->
 				</div>
 			</div>
@@ -97,7 +100,10 @@
 
 		{% endblock %}
 
+	
 	</main>
+
+
 	<!-- Footer-->
 	<!-- Begin Footer
 	================================================== -->
@@ -127,6 +133,12 @@
 	<script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
 	<!-- Template Javascript -->
 	<script src="{% static 'assets/js/main.js' %}"></script>
+	
+	
+
+	<!-- Menu CSS-->
+	<!-- <link rel="stylesheet" href="{% static 'assets/css/menu.css' %}"> -->
+
 </body>
 
 </html>

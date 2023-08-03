@@ -141,3 +141,10 @@ EMAIL_HOST_USER = 'Blogtivo23@gmail.com'
 EMAIL_HOST_PASSWORD = '39719672'
 
 SITE_NAME = 'BlogTivo'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}

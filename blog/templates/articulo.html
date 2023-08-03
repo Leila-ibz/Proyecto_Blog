@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<!-- Script para seleccionar categoría |-->
+<script>
+	function seleccionCategoria(categoriaSeleccionada) {
+		window.location.href = '/articulos?categoria_id=' + categoriaSeleccionada.value
+	}
+
+</script>
+
+
 <div class="container">
 	<div class="mainheading">
 		<h1 class="sitetitle">Blog&middot;Tivo </h1>
@@ -16,14 +26,16 @@
 	</style>
 	<section class="featured-posts">
 		<div class="section-title">
-			<h2><span> Descubre los artículos publicados por nuestros colaboradores, una fuente inagotable de ideas para
+			<h2><span> Descubre los artículos publicados por nuestros colaboradores, una fuente inagotable de ideas
+					para
 					transformar el mundo y vivir en armonía con la Tierra. ¡Encuentra aquí tu fuente de inspiración
 					verde y da rienda suelta a tu conciencia eco-activa!"</span></h2>
 		</div>
 	</section>
+	<!-- Menú Categorías (ponele)-->
 
 	<!-- Begin Related -->
-
+	
 	<style>
 		.img-thumb {
 			width: 100%;
@@ -36,9 +48,23 @@
 			/* Agregar un margen de 20 píxeles en la parte inferior de cada artículo completo */
 		}
 	</style>
+	<!--Evento onchange para cada vez que el usuario selecciona una opcion del menu categorías-->
+	<select onchange="seleccionCategoria(this.options[this.selectedIndex])">
+		
+		{% for opcion in opciones_dropdown %}
+		<!--Se usa el atributo selected para que aparezca la categoría filtrada la primera vez que carga la página-->
+		{% if opcion.id|slugify  == categoria_filtrada %}
+		<option value="{{ opcion.id }}"selected='selected'>{{ opcion.nombre }}</option>
+		{% else %}
+		<option value="{{ opcion.id }}">{{ opcion.nombre }}</option>
+		{% endif %}
+
+		{% endfor %}
+	</select>
 
 	<div class="graybg">
 		<div class="container">
+
 			<div class="row listrecent listrelated">
 				{% for articulo in articulos %}
 				<!-- begin post -->
@@ -87,11 +113,6 @@
 					</div>
 					<!-- end post -->
 
-
-
-
-
-
 				</div>
 				{% empty %}
 				<div style="text-align: center;">
@@ -103,18 +124,18 @@
 
 		</div>
 
-
-
-
 		<!-- Begin AlertBar
 ================================================== -->
 		<div class="alertbar">
 			<div class="container text-center">
-				<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; ¡Un compromiso verde en crecimiento te espera!
+				<img src="{% static 'img/logo.jpg' %}" alt="logo"> &nbsp; ¡Un compromiso verde en crecimiento te
+				espera!
 				Mantente conectado con la naturaleza: <a href="{% url 'contacto:contacto' %}"
 					class="btn subscribe">Contactanos</a>
 			</div>
 		</div>
+
+
 		<!-- End AlertBar
 ================================================== -->
 		{% endblock %}

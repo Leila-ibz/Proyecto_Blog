@@ -17,8 +17,7 @@ urlpatterns = [
     # path('articulos', articulos, name='articulo'),
     path('articulos/', ArticuloView.as_view(), name='articulos'),
     path('leer_articulo/<int:id>', views.leer_articulo, name='leer_articulo'),
-
-
+    
 
 ]
 

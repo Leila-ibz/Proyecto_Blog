@@ -1,189 +1,197 @@
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/mediumish.css' %}">
-
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
-<script src="{% static 'assets/js/mediumish.js' %}"></script>
-
-
-<!-- --------------------------- -->
-
-
 <!DOCTYPE html>
+
+{% load static %}
 <html lang="es-ar">
 
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="Iniciar sesión" content="">
-<link rel="icon" href="static/img/favicon.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{% static 'img/favicon.png' %}">
 
-<title>Blog&middot;Tivo</title>
+	<title>Blog&middot;Tivo</title>
 
-<!-- Bootstrap core CSS -->
-<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
-<!-- Fonts -->
-<link href="{% static 'assets/css/awesome.min.css' %}" rel="stylesheet">
-<link href="{% static 'assets/css/righteous.css' %}" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
-</head>
-<body>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="{% static 'assets/css/awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/righteous.css' %}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
+	<!--auxiliar-->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/mediumish.css' %}">
+	<!--auxiliar2-->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<!-- Google Web Fonts -->
 
-<!-- Begin Nav
-================================================== -->
-<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
-<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="container">
-	<!-- Begin Logo -->
-	<a class="navbar-brand" href="http://127.0.0.1:8000/">
+	<link href="{% static 'assets/css/swap.css' %}" rel="stylesheet">
 
-	<img src="static/img/logo.jpg" alt="logo">
-	</a>
-	<!-- End Logo -->
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	<!-- Icon Font Stylesheet -->
+	<link href="{% static 'assets/css/css_all.min.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/bootstrap-icons.css' %}" rel="stylesheet">
+	<!-- Libraries Stylesheet -->
 
-		<!-- Begin Menu -->
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item active">
-			<a class="nav-link" href="{% url 'quienes_somos' %}">Descubre nuestra esencia eco-consciente <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="{% url 'posts:articulos' %}">Articulos</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="#">Iniciar Sesión</a>
-			</li>
-		</ul>
-		<!-- End Menu -->
+	<link href="{% static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
-
-		<!-- Begin Search -->
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="Explora el eco-universo">
-			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
-		</form>
-		<!-- End Search -->
-	</div>
-</div>
-</nav>
-<!-- End Nav
-================================================== -->
-    <style>
-	.mainheading {
-	  display: flex;
-	  align-items: center;
-	  /* para que el texto aparezca estrecho al logo */
-	}
-  
-	.logo2 {
-	  /* No puedo poner esto en el css, por eso esta aca :c*/
-	  width: 200px; /* Ajusta el tamaño del logo */
-	  height: auto; /*  relación de aspecto original del logo */
-	  margin-right: 10px; /* Ajustar el margen derecho para separar el logo del texto */
-	}
-  
-     </style>
-  
-  <div class="container">
-	<div class="mainheading">
-	  <img class="logo2" src="static/img/logo1.png" alt="Logo del Blog">
-	  <div class="content">
-		<h1 class="sitetitle">Blog&middot;Tivo</h1>
-		<p class="lead">
-		  Espacio virtual para inspirar y motivar a la acción
-		</p>
-	  </div>
-	</div>
-  </div>
-
-   
-	<!-- para centrar el texto  -->
-	<style>
-		.section-title {
-			text-align: center;
-		}
-	</style>
+	<!--Auxiliar -->
 	
-	<section class="featured-posts">
-		<div class="section-title">
-			<h2><span>¿Estás listo para inspirar o inspirarte? ¡Adelante, es hora de hacer la diferencia!</span></h2>
-		</div>
-	</section>
 
-  <style> 
-.container3 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-  }
-  
-.profile-img {
-	max-width: 90%; /* Ajusta el ancho máximo de la imagen */
-	max-height: 90%; /* Ajusta la altura máxima de la imagen */
-  }
-</style>
 
-  <div class="container3">
-	<img class="profile-img" src="static/portada.gif" alt="...">
-  </div>
-  
- <!-- About Section-->
- <section class="bg-light py-5">
-  <div class="container px-5">
-      <div class="row gx-5 justify-content-center">
-          <div class="col-xxl-8">
-              <div class="text-center my-5">
-                  <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Blog&middot;Tivo</span></h2>
+	
+	<!-- Auxiliar  -->
+	<!-- <link rel="stylesheet" href="{% static 'assets/css2/bootstrap.min.css' %}"> -->
+	<!-- <link rel="stylesheet" href="{% static 'assets/css2/animated-headline.css' %}"> -->
+	<link rel="stylesheet" href="{% static 'assets/css2/style.css' %}">
 
-                  <p class="lead fw-light mb-4">Somos un equipo apasionado de personas dedicadas a impulsar el cambio y promover el bienestar en nuestra comunidad. Con una sólida convicción de que juntos podemos marcar la diferencia, trabajamos incansablemente para abordar desafíos sociales y contribuir al desarrollo sostenible.</p>
-                  <p class="text-muted">A través de nuestro blog, buscamos inspirar y empoderar a las personas, brindando información relevante, historias inspiradoras y recursos útiles. Creemos en el poder de la información y la educación como catalizadores del cambio social.</p>
-                  <div class="d-flex justify-content-center fs-2 gap-4">
-                      <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a>
-                      <a class="text-gradient" href="#!"><i class="bi bi-linkedin"></i></a>
-                      <a class="text-gradient" href="#!"><i class="bi bi-github"></i></a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-</main>
-<!-- Footer-->
+
+
+
+</head>
+
+<body>
+	<header>
+		<!-- Begin Nav ========== -->
+		<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+				data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="container">
+				<!-- Begin Logo -->
+				<a class="navbar-brand" href="{% url 'index' %}">
+
+					<img src="{% static 'img/logo.jpg' %}" alt="logo">
+				</a>
+				<!-- End Logo -->
+				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+					<!-- Begin Menu -->
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Descubre nuestra esencia eco-consciente <span
+									class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'posts:articulos' %}">Articulos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Iniciar Sesión</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown">Hola! Leila</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item"></a>
+									<p>
+										{% if user.is_authenticated %}
+									<form method="post" action="#">
+										{% csrf_token %}
+										<button type="submit"
+											style="font-size: 19px; color: rgb(0, 0, 0); margin-right: 20px; background: none; border: none; cursor: pointer;">Cerrar
+											Sesión</button>
+									</form>
+									{% else %}
+									<a href="#" style="font-size: 10px; color: rgb(0, 0, 0); margin-right: 20px;">.</a>
+									{% endif %}
+									<p>
+								</li>
+
+								{% comment %} <li><a class="dropdown-item" href="#">Servicio 2</a></li>
+								<li><a class="dropdown-item" href="#">Servicio 3</a></li> {% endcomment %}
+							</ul>
+						</li>
+
+					</ul>
+					<!-- End Menu -->
+
+				</div>
+			</div>
+		</nav>
+		<!-- End Nav ================================================== -->
+	</header>
+	<main>
+
+		{% block content %}
+
+		{% endblock %}
+
+	</main>
+	<!-- Footer-->
 	<!-- Begin Footer
 	================================================== -->
-	<div class="footer">
+	<footer class="footer">
 		<p class="pull-left">
-			 Copyright &copy; 2017 Your Website Name
+			Copyright &copy; 2023 BlogTivo
 		</p>
-		
-		<div class="clearfix">
-		</div>
-	</div>
-	<!-- End Footer
-	================================================== -->
+	</footer>
+	<!-- End Footer ================================================== -->
+	<!-- Bootstrap core JavaScript ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/tether.min.js' %}"
+		integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+		crossorigin="anonymous"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+	<script src="{% static 'assets/js/mediumish.js' %}"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="{% static 'assets/js/bootstrap2.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery2.min.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'assets/lib/wow/wow.min.js' %}"></script>
+	<script src="{% static 'assets/lib/easing/easing.min.js' %}"></script>
+	<script src="{% static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
-</div>
-<!-- /.container -->
+	<!-- Template Javascript -->
+	<script src="{% static 'assets/js/main.js' %}"></script>
 
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-<script src="{% static 'assets/js/tether.min.js' %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
-<script src="{% static 'assets/js/mediumish.js' %}"></script>
+	<script src="{% static 'assets/js/menu.js' %}"></script>
 
-<!-- Placed at the end of the document so the pages load faster -->
+	<!-- Auxiliar -->
+	<script src="{% static 'assets/js2/popper.min.js' %}"></script>
+	<script src="{% static 'assets/js2/bootstrap.min.js' %}"></script>
+	<!-- Jquery Mobile Menu -->
+	<script src="{% static 'assets/js2/jquery.slicknav.min.js' %}"></script>
 
+	<!-- Video bg -->
+	<script src="{% static 'assets/js2/jquery.vide.js' %}"></script>
+
+	<!-- Jquery Slick , Owl-Carousel Plugins -->
+	<script src="{% static 'assets/js2/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'assets/js2/slick.min.js' %}"></script>
+	<!-- One Page, Animated-HeadLin -->
+	<script src="{% static 'assets/js2/wow.min.js' %}"></script>
+	<script src="{% static 'assets/js2/animated.headline.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.magnific-popup.js' %}"></script>
+
+	<!-- Date Picker -->
+	<script src="{% static 'assets/js2/gijgo.min.js' %}"></script>
+	<!-- Nice-select, sticky -->
+	<script src="{% static 'assets/js2/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.sticky.js' %}"></script>
+	<!-- Progress -->
+	<script src="{% static 'assets/js2/jquery.barfiller.js' %}"></script>
+
+	<!-- counter , waypoint,Hover Direction -->
+	<script src="{% static 'assets/js2/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'assets/js2/waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.countdown.min.js' %}"></script>
+	<script src="{% static 'assets/js2/hover-direction-snake.min.js' %}"></script>
+
+	<!-- contact js -->
+	<script src="{% static 'assets/js2/contact.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.form.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.validate.min.js' %}"></script>
+	<script src="{% static 'assets/js2/mail-script.js' %}"></script>
+	<script src="{% static 'assets/js2/jquery.ajaxchimp.min.js' %}"></script>
+
+	<!-- Jquery Plugins, main Jquery -->
+	<script src="{% static 'assets/js2/plugins.js' %}"></script>
+	<script src="{% static 'assets/js2/main.js' %}"></script>
 </body>
+
 </html>
